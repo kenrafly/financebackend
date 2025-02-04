@@ -8,6 +8,8 @@ import walRouter from "./routes/walletRecordRoutes.js";
 const app = express();
 const port = process.env.PORT || 3000;
 
+connectDB();
+
 app.use(express.json());
 app.use(cors());
 
@@ -20,4 +22,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-connectDB();
